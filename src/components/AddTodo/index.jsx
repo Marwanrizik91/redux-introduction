@@ -7,11 +7,14 @@ const AddTodo = () => {
     const dispatch = useDispatch()
 
     return (
-        <form style={{ display: 'flex' }} onSubmit={(event) => {
-            event.preventDefault()
-            dispatch(addTodo(description))
-            setDescription('')
-        }}>
+        <form
+            style={{ display: 'flex' }}
+            onSubmit={(event) => {
+                event.preventDefault()
+                dispatch(addTodo(description))
+                setDescription('')
+            }}
+        >
             <input
                 type="text"
                 onChange={({ target }) => setDescription(target.value)}

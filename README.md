@@ -4,9 +4,10 @@
 ## Just remember there is a lot of magic
 ![](https://media.giphy.com/media/12NUbkX6p4xOO4/giphy.gif)
 
-> understand how to use it but not how it works
 
-<br><br><br>
+<br>
+
+![](./assets/redux.png)
 
 ## The bank example
 
