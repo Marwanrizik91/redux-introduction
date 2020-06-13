@@ -72,5 +72,5 @@ const store = combineReducers({
 })
 
 // to get the balance we do
-useSelector(state => state.bankState.balance)
+const balance = useSelector(state => state.bankState.balance)
 ```
