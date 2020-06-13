@@ -1,12 +1,5 @@
 # Redux
 
-
-## Just remember there is a lot of magic
-![](https://media.giphy.com/media/12NUbkX6p4xOO4/giphy.gif)
-
-
-<br>
-
 ![](./assets/redux.png)
 
 ## The bank example
