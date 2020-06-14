@@ -1,21 +1,28 @@
 import React from 'react'
 import './style.css'
+import { useDispatch, useSelector } from "react-redux";
+import { incrementProduct, decrementProduct } from '../../redux/actions'
+
+
 
 const Cart = () => {
     // the value of this variable needs to come from the redux state
-    const addedProducts = [{ name: 'Banana', quantity: 2, price: 10 }]
+
+    const dispatch = useDispatch()
+
+    const products = useSelector(state => state.productReducer.items)
 
     return (
         <div className="cart">
-            {addedProducts.map((product) => (
+            {products.map(({name, quantity}) => (
                 <div className="cart-item">
                     <span className="cart-item-name">
-                        {product.name}
+                        {name}
                     </span>
                     <div className="quantity-container">
-                        <button className="quantity-control" onClick={() => 1}>-</button>
-                        <span style={{ fontSize: '20px' }}>{product.quantity}</span>
-                        <button className="quantity-control" onClick={() => 1}>+</button>
+                        <button className="quantity-control" onClick={() => dispatch(decrementProduct(name))}>-</button>
+                        <span style={{ fontSize: '20px' }}>{quantity}</span>
+                        <button className="quantity-control" onClick={() => dispatch(incrementProduct(name))}>+</button>
                     </div>
                 </div>
             ))}

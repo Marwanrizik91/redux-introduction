@@ -2,8 +2,13 @@ import React from 'react';
 import './App.css';
 import Products from './components/Products'
 import Cart from './components/Cart'
+import { useSelector } from 'react-redux'
 
 function App() {
+
+  const totalItemsPrice = useSelector(state => state.productReducer.price)
+  console.log(totalItemsPrice)
+
   const totalPrice = 20
 
   return (

@@ -1,7 +1,12 @@
 import React from 'react'
 import './style.css'
+import { useDispatch } from "react-redux";
+import { addProduct } from '../../redux/actions'
 
 const Products = () => {
+
+    const dispatch = useDispatch()
+
     const products = [
         { name: 'Banana', price: 1 },
         { name: 'Potato', price: 100 },
@@ -15,7 +20,7 @@ const Products = () => {
     return (
         <div className="products-list">
             {products.map((product) => (
-                <div onClick={() => 1} className="product">
+                <div onClick={() => dispatch(addProduct(product))} className="product">
                     <span className="product-name">{product.name}</span>
                     <span className="product-price">{product.price}₪</span>
                 </div>
